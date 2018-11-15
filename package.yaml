@@ -1,0 +1,24 @@
+
+name:                grab
+version:             0.1.0.0
+license:             MIT
+author:              "Giorgio Marinelli"
+maintainer:          "giorgio@marinel.li"
+copyright:           "© 2018 Giorgio Marinelli"
+
+dependencies:
+- base >= 4.7 && < 5
+- tagsoup
+- aeson
+- aeson-pretty
+- bytestring
+
+executables:
+  grab-exe:
+    main:                Main.hs
+    source-dirs:         src
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+
