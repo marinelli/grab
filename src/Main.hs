@@ -124,7 +124,9 @@ main =
           BS.putStrLn "!!! supply a file path"
           return ()
       fp : _ ->
+        let input = if (fp == "-") then getContents else readFile fp
+        in
         do
-          rs <- (getDays . parseTags) <$> readFile fp
+          rs <- (getDays . parseTags) <$> input
           BS.putStrLn $ prettifyJson $ daysProgrammingJson rs
 
